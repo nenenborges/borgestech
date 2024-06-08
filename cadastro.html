@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="shortcut icon" href="/icones/ico.ico" type="/icon">
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Cadastro</h1>
+
+            <div class="entryarea">
+                <input id="Nome" type="text" required >
+                <div class="labelline">Seu 1º Nome</div>
+            </div>
+
+            <div class="entryarea">
+                <input id="Email" type="text" required >
+                <div class="labelline">Email</div>
+            </div>
+
+            <div class="entryarea">
+                <input id="Rua" type="text" required >
+                <div class="labelline">Endereço</div>
+            </div>
+
+            <!------numero telefone-->
+           <div id="ruaNumero">
+                <div class="entryarea2">
+                    <input id="Numero" type="text" required >
+                    <div class="labelline">Nº</div>
+                </div>
+
+                <div class="entryarea2">
+                    <input id="telefone" type="text" required>
+                    <div class="labelline">Telofone com DDD</div>
+                </div>
+           </div>
+           <!--------------->
+            
+
+    
+            
+            
+            <div class="entryarea">
+                <input id="Senha" type="text" required >
+                <div class="labelline">Digite Sua Senha</div>
+            </div>
+            
+           <!----<div class="label-float">
+                <input type="text" id="usuario" placeholder="" required>
+                <div class="labelline">Digite Seu Número</div>
+            </div>
+    
+            <div class="label-float">
+                <input type="text" id="senha" placeholder="" required>
+                <label id="userLabel" for="usuario">Senha</label>
+            </div>-->
+    
+            
+            <div class="buttonCadastro">
+                <a href="index.html"  id="voltar">Voltar</a>
+                <a  id="cadastro">Cadastrar</a>
+                
+            </div>
+    
+            <div class="justify-center">
+               <hr>
+            </div>
+    
+            <p>Já possuo conta
+                <a id="entre" href="login.html">Entre</a>
+            </p>
+    
+        </div>
+    </div>
+   
+
+    
+    <script type="module" src="javascript/cadastro.js"></script>
+
+
+    <script src="javascript/mascara.js"></script>
+</body>
+</html>

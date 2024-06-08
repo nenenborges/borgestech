@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family:'audio' ;
+    src: url('/fontes/Audiowide.ttf') format('opentype'), url('/fontes/Audiowide.ttf') format('truetype');
+
+   
+}
+
+@font-face {
+    font-family:'museom' ;
+    src: url('/fontes/MuseoModerno.ttf') format('opentype'), url('fontes/MuseoModerno.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:'spartan' ;
+    src: url('/fontes/spartan-regular.ttf') format('opentype'), url('/fontes/spartan-regular.ttf') format('truetype');
+}
+
+
+
+
+.logo{
+    width: 160px;
+   
+}
+#entrar{
+    font-weight: 600;
+    
+}
+
+
+:root{
+    --main-color:#fd4646;
+    --texte-color: #171427;
+    --bg-color: #eee;
+    --bg-bege:#ebebeb;
+    --secunday-color: rgb(9, 189, 9);
+
+    --icon-verde: style=" filter: invert(88%) sepia(30%) saturate(5428%) hue-rotate(178deg) brightness(96%) contrast(94%)"
+    --icon-azul: style="filter: invert(31%) sepia(78%) saturate(1211%) hue-rotate(190deg) brightness(107%) contrast(106%)"
+    --icon-red: style="filter: invert(19%) sepia(91%) saturate(6442%) hue-rotate(337deg) brightness(94%) contrast(100%)"
+}
+
+
+p{
+    font-size: 16px;
+    color: #465b52;
+}
+
+h4{
+    font-family: museom;
+}
+.section-p1{
+    padding: 40px 80px;
+
+}
+
+
+
+.section-m1{
+    margin: 40px 0;
+}
+
+
+/*header start*/
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+}
+/*.headeractive{
+    z-index: 0;
+}*/
+.logo{
+    width: 160px;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: museom;
+    padding-left: 10px;
+}
+
+.navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    
+}
+
+.navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+
+}
+
+.navbar li a:hover{
+    color: #088178;
+
+}
+
+.navbar li a:hover::before{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -5px;   
+}
+
+/*----usuario-----*/
+
+
+#user-icon{
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: museom;
+    padding-right: 10px;
+    margin-bottom: 0;
+   
+}
+
+#cliente{
+    padding-bottom: 0;
+    margin-bottom: 5px;
+   text-align: center;
+   font-size: 12px;
+}
+
+/*icone de sacola com o numero*/
+
+#cart-icon{
+    justify-content: flex-end;
+    font-size: 25px;    
+}
+
+#cart-icon[data-quantity="0"]::after{
+    contain: "";
+}
+#cart-icon[data-quantity]::after{
+    content: attr(data-quantity);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background: #f30404;
+    border-radius: 50%;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/*-------banner------>*/
+.hero{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 25px; 
+    padding-right: 25px;
+    /*background: radial-gradient(#ffff,#c7bc5d);*/
+    background:#e3e6f3;
+}
+
+.col-1{
+    text-align: left;
+}
+
+.col-1 p{
+    font-family: spartan;
+}
+
+.col-1 h1{
+    font-family: museom;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+    
+}
+
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0;
+    
+    
+}
+/*----------------------*/
+
+
+/*----serviços------*/
+.feature{
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   padding: 2rem 5rem 4rem
+
+   
+}
+
+.feature .fe-box{
+    width: 300px;
+    min-width: 100px;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px soli #cce7d8;
+    border-radius: 10px;
+    margin: 15px 0;
+    
+}
+
+.feature .fe-box img{
+    width: 100%;
+}
+
+.feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+/*------------------------*/
+
+
+
+
+#pagination{
+    text-align: center;
+    margin: 15px;
+    margin-bottom: 20px;
+
+}
+
+
+
+#pagination a{
+    text-decoration: none;
+    background-color: green;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+
+/*FOOTER*/
+footer{
+    background: #121212;
+    color: white;
+}
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.footer li{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    
+}
+
+.footer li img{
+    filter: brightness(0) invert(1);
+}
+
+.footer li p{
+    font-family: museom;
+    font-size: 12px;
+    padding-left:  5px;
+    color: white;
+}
+
+.footer .col p{
+    color: white;
+    font-family: museom;
+    font-size: 12px;
+}
+
+footer .copyright{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+footer .copyright hr{
+    color: #171427;
+}
+
+footer .copyright p{
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+

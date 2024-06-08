@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta</title>
+    <link rel="stylesheet" href="/css/conta.css">
+    <link rel="shortcut icon" href="/icones/ico.ico" type="/icon">
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Sua Conta</h1>
+            <div class="cliente">
+                <div class="entryarea" >Nome: <span class="client" id="name"></span></div>
+                <div class="entryarea">Endereço: <span class="client" id="rua"></span></div>
+                <div class="entryarea">Telefone: <span class="client" id="phone"></span></div>
+                <div class="entryarea">Email: <span id="email-conta"></span></div>
+            </div>
+
+           <img id="image" src="" alt="">
+           
+
+            <div class="justify-center">
+                <a href="index.html"><button id="voltar">Voltar</button></a>
+            </div>
+    
+            <div class="justify-center">
+               <hr>
+            </div>
+    
+            <p>Você está conectado
+               <a id="sair" href="">Sair</a>
+            </p>
+        </div>
+    </div>
+
+  <!----  <script src="cart.js" defer></script>-->
+
+  <script defer type="module" src="/javascript/pedido.js" ></script>
+
+  <!---- scrpt firebase-->
+<!--<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js"></script>
+
+<script >
+const firebaseConfig = {
+    apiKey: "AIzaSyCaPv_OzBN9vI20I0ynTaIZRsViD9fa3WE",
+    authDomain: "borgestechlogin.firebaseapp.com",
+    projectId: "borgestechlogin",
+    storageBucket: "borgestechlogin.appspot.com",
+    messagingSenderId: "769990569355",
+    appId: "1:769990569355:web:48e3efddc44248fa30538e"
+};
+  // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+</script>-->
+    
+
+   
+    <script type="module" src="javascript/conta.js"></script>
+   <!---- <script type="module" src="nomeLogado.js"></script>-->
+</body>
+</html>

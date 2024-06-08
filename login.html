@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/loginCadastro.css">
+    <link rel="shortcut icon" href="/icones/ico.ico" type="/icon">
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Entrar</h1>
+            <div id="msgError"></div>
+    
+            <div class="entryarea">
+                <input id="email" type="text" >
+                <div class="labelline">Digite Seu Email</div>
+            </div>
+            
+            <div class="entryarea">
+                <input id="password" type="password" >
+                <div class="labelline">Digite Sua Senha</div>
+            </div>
+
+            <div class="buttons">
+                <a id="voltar" href="index.html">Voltar</a>
+                <button  id="login">Entrar</button>
+            </div>
+    
+            
+    
+            <div class="justify-center"> <hr> </div>
+    
+            <p>Não tem uma conta
+                <a href="cadastro.html">Cadastre-se</a>
+            </p>
+    
+        </div>
+    </div>
+
+
+<!-----scrip firebase-->
+
+<!--<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js"></script>
+
+
+<script >const firebaseConfig = {
+    apiKey: "AIzaSyCaPv_OzBN9vI20I0ynTaIZRsViD9fa3WE",
+    authDomain: "borgestechlogin.firebaseapp.com",
+    projectId: "borgestechlogin",
+    storageBucket: "borgestechlogin.appspot.com",
+    messagingSenderId: "769990569355",
+    appId: "1:769990569355:web:48e3efddc44248fa30538e"
+    };
+  // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+</script>-->
+<!-----scrip firebase-->
+
+
+    <script type="module" src="javascript/login.js"></script>
+</body>
+</html>

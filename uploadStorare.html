@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="css/uploadStorage.css">
+</head>
+<body>
+
+    <h1>Upload File to Storage</h1>
+
+    <form id="uploadForm">
+      <div>
+        <label for="marca">Marca do Produto</label>
+        <input type="text" id="marca" placeholder="Enter your title" />
+      </div>
+      <div>
+        <label for="produto">Nome do Produto</label>
+        <input type="text" id="produto" placeholder="Enter your author" />
+      </div>
+      <div>
+        <div>
+            <label for="valor">Valor do Produto</label>
+            <input type="text" id="valor" placeholder="Enter your author" />
+          </div>
+          <div>
+        <label for="image">Selecione a Imagem</label>
+        <input type="file" id="image" name="image" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+
+<script type="module" src="javascript/uploadStorage.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+.pulsar{
+    left: 93%;
+    bottom: 7%;
+}
+
+.pulsar img{
+    width: 25px;
+    height: 25px;
+    background: transparent;
+
+}
+
+
+
+.pulsar{
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    background: #0aa30a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.pulsar:before, .pulsar ::after{
+    content: '' ;
+    display: block;
+    position: absolute;
+    border: 2px solid #0aa30a;
+    border-radius: 50%;
+    left: -40px;
+    right: -40px;
+    top: -40px;
+    bottom: -40px;
+    animation: animar 1.2s linear infinite;
+}
+
+.pulsar ::after{
+    animation-delay: 0.5s;
+
+}
+
+@keyframes animar  {
+    0%{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+
+    }
+    
+    100%{
+        transform: scale(1.2);
+        opacity: 0;
+
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .pulsar{
+        left: 85%;
+        bottom: 4%;
+    
+    }
+}

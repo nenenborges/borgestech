@@ -1,0 +1,342 @@
+@font-face {
+    font-family:'audio' ;
+    src: url('/fontes/Audiowide.ttf') format('opentype'), url('/fontes/Audiowide.ttf') format('truetype');
+
+   
+}
+
+@font-face {
+    font-family:'museom' ;
+    src: url('/fontes/MuseoModerno.ttf') format('opentype'), url('fontes/MuseoModerno.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:'spartan' ;
+    src: url('/fontes/spartan-regular.ttf') format('opentype'), url('/fontes/spartan-regular.ttf') format('truetype');
+}
+/*navbar*/
+@media only screen and (max-width:799px){
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+}
+
+/*banner modo mobile*/
+@media only screen and (max-width:799px){
+    .hero{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 10px; 
+        padding-right: 10px;
+        /*background: radial-gradient(#ffff,#c7bc5d);*/
+        background:#e3e6f3;
+    }
+    .col-1{
+        text-align: left;
+        font-size: 10px;
+        padding-bottom: 5px;
+        margin-top: 40px;
+    }
+    
+    .col-1 p{
+        font-family: spartan;
+        font-size: 11px;
+       
+    }
+    .col-1 h4{
+        font-family: museom;
+        font-size: 12px;
+    }
+    
+    .col-1 h1{
+        font-family: museom;
+        font-size: 20px;
+    }
+    .col-2{
+        flex-basis: 80%;
+        min-width: 100px;
+      
+    }
+    .col-2 img{
+        max-width: 100%;
+        padding: 10px 3px;
+        
+        
+    }
+
+    .logo{
+        width: 100px;
+       
+    }
+    
+
+}
+
+
+/* foooter modo celular */
+@media only screen and (max-width:799px){
+
+    .footer li img{
+        filter: brightness(0) invert(1);
+        
+    }
+    .img-footer{
+        width: 150px;
+    }
+
+    .img-cartao{
+        width: 200px;
+    }
+    .sociais{
+        display: flex;
+
+    }
+    .img-sociais{
+        width: 20px;
+        height: 20px;
+       margin-left: 3px;
+    }
+    
+    .footer li p{
+        font-family: museom;
+        font-size: 15px;
+        padding-left:  5px;
+        color: white;
+    }
+    
+    .footer .col p{
+        color: white;
+        font-family: museom;
+        font-size: 10px;
+    }
+
+    .footer .col h4{
+        color: white;
+        font-family: museom;
+        font-size: 15px;
+    }
+
+
+}
+
+/*modo mobile do servços*/
+@media only screen and (max-width:799px){
+    .feature{
+        width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       padding: 2rem 2rem 4rem
+       
+        
+    }
+
+    .feature .fe-box{
+        width: 300px;
+        min-width: 100px;
+        padding: 5px 5px;
+        box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+        border: 1px soli #cce7d8;
+        border-radius: 4px;
+        margin: 15px 0;
+        
+    }
+
+    
+}
+
+@font-face {
+    font-family:'spartan' ;
+    src: url('/fontes/spartan-regular.ttf') format('opentype'), url('/fontes/spartan-regular.ttf') format('truetype');
+}
+
+@media only screen and (max-width:799px){
+
+    .container-card{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        right: -300%;
+        background: #050c019f;
+        z-index: 8;
+    top: 0;
+    backdrop-filter: blur(5px);
+    }
+
+    .active{
+        right: 0;
+    }
+
+    .card{
+        width: 100%;
+        height: 100%;
+        background: #04000c;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 3px 3px 1px 0px #00000060;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        
+    }
+
+    .card h5{
+        padding-left: 5px;
+        color: #1a1a1a;
+        font-size: 12px;
+    }
+
+    .tabela .pdt{
+        padding-left: 50px;
+    
+    }
+
+    .tabela{
+        display: flex;
+        background: #e3e6f3;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    
+    }
+
+
+    .card span{
+        font-family: spartan;
+        font-size: 10px;
+    }
+
+    .card h1{
+        text-align: center;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    .entryarea{
+        position: relative;
+        height: 20px;
+        line-height: 10px;
+        margin: 1px;
+
+    }
+
+    .justify-center{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 3px 0;
+        border-radius: 20px;
+    }
+    .card p{ 
+        justify-content: end;
+        text-align: end;
+        padding-right: 5px;
+    }
+    .card #pedido{
+        text-align: left;
+    }
+    .card button{
+        bottom: 10px;
+        background-color: transparent;
+        border-color: #66ff00;
+        padding: 10px 40px;
+        font-weight: bold;
+        font-size: 12pt;
+        margin: 10px 20px;
+        border-radius: 15px;
+        cursor: pointer;
+        outline: none;
+        transition: all .4s ease-out;
+        color: white;
+    
+        
+    }
+    .buttonPedido{
+        justify-content: center;
+        align-items: center;
+        text-align:center ;
+
+    }
+    button:hover{
+        background-color: green;
+        color: white;
+    }
+
+    .card a{
+        
+        color: #66ff00;
+        text-decoration: none;
+    }
+
+
+
+
+    #pedido{
+        text-align: left;
+        justify-content: left;
+        align-items: flex-start;
+        
+    }
+
+    #pedido p {
+        color: #719c8a;
+    text-align: left;
+        font-size: 13px;
+        padding-left: 15px; 
+    
+    }
+}
+
+/*forma de pagament*/
+@media only screen and (max-width:799px){
+    
+    .container-pagamento{
+        position: fixed;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+       width: 100%;
+       height: 100%;
+       display: flex;
+       top: 0;
+       right: -300%;
+       width: 100%;
+       background: #000000e3;
+       box-shadow: -2px 0 4px hsl( 0 4% 15% / 10%);
+       transition: 0.5s;
+    }
+    
+    .container-pagamento .forma{
+        justify-content: center;
+        margin: auto;
+        width: 300px;
+        height: 600px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(248, 248, 248, 0.5);
+        padding: 10px 10px;
+        background: #e4dfdf;
+       
+       
+    }
+
+    .container-pagamento .forma h3{
+        font-size: 15px;
+    }
+}

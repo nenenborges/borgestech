@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borges Tech</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/whatsapp.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/pedido.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    <link rel="stylesheet" href="css/formaPagamento.css">
+  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <link rel="shortcut icon" href="/icones/ico.ico" type="/icon">
+
+    
+   
+    
+    <!--<link rel="stylesheet" href="menu.css">-->
+
+</head>
+<body>
+
+
+   
+    
+   <section class="header">
+    <div class="menuLogo">
+        <img src="/icones/menu.png" class="menu-icon"  width="25px" height="25px">
+        <a href="#"> <img src="/icones/logo.png" class="logo"></a>
+    </div>
+    <div class="nav-container">
+        <ul class="navbar" id="menuItens">
+            <li><a id="aInicio" href="#">Início</a></li>
+            <li><a id="aProdutos" href="#produtos">Produtos</a></li>
+            <li><a id="aContato" href="#footer-link">Contato</a></li>
+            <li><a id="quemSomos" href="#footer-link">Quem Somos</a></li> 
+            <div class="usuario">
+
+                <div class="usuario-icon"><i class='bx bxs-user' id="user-icon"  ></i><i id="entrar" >Entrar</i></div>
+                <img src="/icones/fechar.png" alt="" class="menu-close" width="35px" height="35px">
+                
+            </div>
+        </ul>
+        <img id="userIcon" src="icones/usericon.png" alt="" width="25px">
+   
+        <div class="btn-cart">
+            <li><i class='bx bx-shopping-bag ' id="cart-icon" data-quantity="0"></i></li> 
+        </div>
+        
+        
+   
+    </div>
+    </div>
+    
+   </section> 
+  
+  
+
+
+   <!-------carrinho de compras-->
+    <div class="cart"><!--container-->
+
+            <div class="cart-title"><p>SEU CARRINHO</p></div>
+            <i class='bx bx-x' id="close-cart" ></i>
+            <div class="rolagem">
+                <div class="cart-content">
+                <!----Classes removida para cart.js
+                cart-box, cart, cart-img, detail-box, cart-product-title, cart-price, cart-quantity, cart-remove -->
+
+                </div>
+            </div>
+        <!-----Total------>
+        <div class="side-bar">
+            <div class="total">
+                <div class="total-title">TOTAL:</div>
+                <p class="currency">R$</p>
+                <div class="total-price">0</div>
+            </div>
+
+            <!-----------botao bUy-------->
+            <button type="button"  class="btn-buy">FINALIZAR</button>
+             
+        </div> 
+    </div><!------car-->
+
+    <!--///////////////----PEDIDO -pedido.css-///////////-->
+    <div class="container-card">
+        <div class="card">
+            <h1>Dados da Entrega</h1>
+
+            <div class="entryarea" >Nome: <span class="client" id="name"></span></div>
+            <div class="entryarea">Endereço: <span class="client" id="rua"></span></div>
+            <div class="entryarea">Telefone: <span class="client" id="phone"></span></div>
+             
+            <div class="justify-center">
+                <hr>
+             </div>
+
+             <h1>Seu Pedido</h1>
+
+            <div class="tabela">
+            <h5 class="qtd">QTD</h5>
+            <h5 class="pdt">PRODUTOS</h5>
+            <h5></h5>
+            </div>
+            
+            <!--dados vindo do cart.js -->
+            <div id="pedido"></div> 
+            
+            <div class="justify-center">
+               <hr>
+            </div>
+    
+            <p>TOTAL: 
+                <!------pega valor no cart-->
+                <a id="pedidoTotal">0</a>
+                
+            </p>
+
+            <div class="buttonPedido">
+                <button id="checkout-btn">IR PARA PAGAMENTO</button>
+                <a href="#" id="checkout-voltar">Voltar</a>
+            </div>
+            
+        </div>
+    </div>
+    <!--------------------------->
+
+    <!---------pagamento-->
+    <div class="container-pagamento">
+        <div class="forma">
+            <img src="icones/fechar.png" id="fechar-pagamento" alt="">
+            <img src="/imagens/pagamento.png" class="img-mercado">
+            <h4>Escolha a Forma de Pagamento</h4>
+            
+        
+            <div class="especie">      
+                <div class="dinheiro">
+                    <img src="imagens/especie.png" width="30px">
+                    <h3>Pagamento em Espécie</h3>
+                </div>
+
+                <div id="wallet_container"></div>
+            </div> 
+
+        </div>
+    </div><!-------->
+    
+   
+
+ <!---- Banner-->  
+<section class="hero">
+    <div class="col-1">
+        <h4>Seja Bem vindo!</h4>
+        <h1>Assistência Técnica  Especializada </h1>
+        <p>Concerto de Impressoras, Computadores e Notbooks </p>
+    </div>
+
+    <div class="col-2">
+        <img class="img-banner" src="/imagens/image.png" alt="">
+    </div>
+    
+</section>
+
+<section class="feature">
+    <!-----box1-->
+    <div class="fe-box">
+        <img src="/imagens/impressoras.jpg" alt="">
+    </div>
+
+    <!-----box1-->
+    <div class="fe-box">
+        <img src="/imagens/not.jpg" alt="">
+    </div>
+    <!-----box1-->
+    <div class="fe-box">
+        <img src="/imagens/banner3.png" alt="">
+    </div>
+</section>
+
+<section class="product">
+    <h2 id="produtos" class="title">Produtos</h2>
+    <div class="pro-container">
+
+          <!--produtos-->
+        <div class="product-box">
+            <img  src="/imagens/tintas/magenta.png" class="product-img">
+            <div class="des">
+                <span>Epson</span>
+                <h5 class="product-title" id="product-title">Tinta p/ Impressora Epson 544 Magenta </h5>
+                <div class="star">
+                    <i >&#9733;&#9733;&#9733;&#9733;&#9734</i> <!---estrelas-->
+                </div >
+                <div class="price-box">
+                    <p>R$</p><h4 class="price" id="price">60.00</h4>
+                </div>
+            </div>
+            <button class=' add-cart ' >ADICIONAR NO CARRINHO</button>
+          
+        </div>
+
+         <!--produtos-->
+         <div class="product-box">
+                <img  src="/imagens/tintas/yellow.png" class="product-img">
+            <div class="des">
+                <span>Epson</span>
+                <h5 class="product-title" id="product-title">Tinta p/ Impressora Epson 544 Amarelo </h5>
+                <div class="star">
+                    <i >&#9733;&#9733;&#9733;&#9733;&#9734</i> <!---estrelas-->
+                </div >
+                <div class="price-box">
+                    <p>R$</p><h4 class="price" id="price">60.00</h4>
+                </div>
+            </div>
+            <button class=' add-cart ' >ADICIONAR NO CARRINHO</button>
+          
+        </div>
+
+
+
+       
+        <!--------///////////////////////////////////////////////////////////////////---------------->
+
+           <!--produtos-->
+        <div class="product-box">
+            <img src="/imagens/tintas/ciano.png" class="product-img">
+            <div class="des">
+                <span>epson</span>
+                <h5 class="product-title">Tinta p/ impressora Epson 544 Ciano</h5>
+                <div class="star">
+                    <i >&#9733;&#9733;&#9733;&#9733;&#9734</i> <!---estrelas-->
+                </div>
+                <div class="price-box">
+                    <p>R$</p><h4 class="price" id="price">60.00</h4>
+                </div>
+            </div>
+                <button class=' add-cart ' >ADICIONAR NO CARRINHO</button>
+        </div>
+         <!------------------------>
+        
+         
+
+           <!--produtos-->
+        <div class="product-box">
+                <img src="/imagens/tintas/black.png" class="product-img">
+            <div class="des">
+                <span>epson</span>
+                <h5 class="product-title">Tinta p/ Impressora Epson 544 Black</h5>
+                <div class="star">
+                    <i >&#9733;&#9733;&#9733;&#9733;&#9734</i> <!---estrelas-->
+                </div>
+                <div class="price-box">
+                    <p>R$</p><h4 class="price" id="price">60.00</h4>
+                </div>
+            </div>
+                <button class=' add-cart ' >ADICIONAR NO CARRINHO</button>
+        </div>
+         <!------------------------>
+
+           <!--produtos-->
+        <div class="product-box">
+            <img src="/imagens/informatica/ssd.png" class="product-img">
+        <div class="des">
+            <span>Goldenfir</span>
+            <h5 class="product-title">SSD Goldenfir 250gb</h5>
+            <div class="star">
+                <i >&#9733;&#9733;&#9733;&#9733;&#9734</i> <!---estrelas-->
+            </div>
+            <div class="price-box">
+                <p>R$</p><h4 class="price" id="price">60.00</h4>
+            </div>
+        </div>
+            <button class=' add-cart ' >ADICIONAR NO CARRINHO</button>
+    </div>
+     <!------------------------>
+
+
+    </div>
+</section>
+<!---------botao para pagina de produtos-->
+<!----
+<section id="pagination">
+    <a href="product.html">1</a>
+    <a href="product.html">2</a>
+    <a href="product.html">3</a>
+    <a href="product.html"><i>-></i></a>
+</section>-->
+
+
+<!---footer---->
+<footer >
+
+    <div id="footer-link" class="footer section-p1">
+        <!---1º coluna-->
+        <div class="col">
+            <img src="/icones/logofundo.png" width="150px" class="img-footer" alt="">
+            <h4>Contato</h4>
+            <p> <strong>Telefone:</strong> (86) 9 9568-1475</p>
+            <p> <strong>Atendimento:</strong> 8:00 - 18:00, Seg - Sab</p>
+        </div>
+
+        <!---2º coluna-->
+        <div class="col">
+            <h4>Siga-nos</h4>
+            <div class="sociais">
+                <li>
+                    <img class="img-sociais" src="/icones/facebook.png" width="20px" height="20px">
+                    <p>Faceboook</p>
+                </li>   
+                
+                <li><img  class="img-sociais" src="/icones/instagram.png" width="20px" height="20px"alt="">
+                    <p>Intagram</p>
+                </li>
+                <li><img  class="img-sociais" src="/icones/youtube.png" width="25px" >
+                    <p>youtube</p>
+                </li>
+            </div>
+        </div>
+
+        <!---3º coluna-->
+        <div class="col">
+            <h4>Aceitamos os Cartões</h4>
+            <p><img src="/icones/cartao.png" class="img-cartao" width="230px"></p>
+            <p>Parcelamos suas compras</p>
+        
+        </div>
+    </div>
+    <div class="copyright">
+        <hr>
+        <p>Copyright &copy;2024  Borges Tech by Borges</p>
+    </div>
+</footer>
+
+
+    <!-------Whatsapp-->
+    <a href="https://api.whatsapp.com/send?l=pt&amp;phone=5586995681475" class="pulsar">
+        <img src="/icones/zap.png" alt="phone">
+    </a>
+<script type="module" src="javascript/nomeLogado.js"></script>
+<!----------------SCRIP DOS PRODUTOS------->
+<script type="module" src="javascript/products.js"></script>
+
+<script type="module" src="/javascript/pedido.js" defer></script>
+
+<!--menu-->
+<script src="client/menu.js"></script>
+
+<!---carinho-->
+<script src="client/cart.js"></script>
+
+<!---modal-->
+<script src="javascript/pagamento.js"></script>
+
+<script type="module" src="javascript/conta.js"></script>
+<!--<script src="base.js"></script>-->
+
+
+<!-----------scrips mercado -pago-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="client/index.js"></script>
+    
+
+   
+</body>
+</html>
