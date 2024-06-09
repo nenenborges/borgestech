@@ -8,7 +8,7 @@ import { MercadoPagoConfig, Preference } from "mercadopago";
 const client = new MercadoPagoConfig({accessToken:"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"});
 
 const app = express();								
-const port = 3000;
+/*const port = 3000;*/
 
 
 app.use(cors());
@@ -116,10 +116,10 @@ fetch("https://api.mercadopago.com/v1/payments?accessToken:TEST-3212641412207539
 			
 
 //---------FIM DO RECEBENDO MERCADO PAGO--------//
-
+/*
   app.listen(port, ()=> {
 	console.log(`Este servidor esta na porta  ${port}` );
 	
   });
 
- 
+ */
