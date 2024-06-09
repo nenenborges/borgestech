@@ -11,7 +11,7 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
           price: document.getElementsByClassName("total-price")[0].innerText,
       };
 
-      const response = await fetch("https://borgestech.com.br/create_preference", { 
+      const response = await fetch("https://github.com/nenenborges/borgestech/create_preference", { 
           method: "POST",
           headers: {
               "Content-Type": "application/json",
