@@ -8,7 +8,7 @@ import { MercadoPagoConfig, Preference } from "mercadopago";
 const client = new MercadoPagoConfig({accessToken:"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"});
 
 const app = express();								
-const port = 8080;
+const port = 3000;
 
 
 app.use(cors());
