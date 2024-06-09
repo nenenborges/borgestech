@@ -1,3 +1,4 @@
+fetch(request, {mode: 'cors'});
 const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
   locale: 'pt-BR', // 'pt-BR'
 });
@@ -11,7 +12,7 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
           price: document.getElementsByClassName("total-price")[0].innerText,
       };
 
-      const response = await fetch("/create_preference", { 
+      const response = await fetch("http://localhost:8080/create_preference", { 
           method: "POST",
           headers: {
               "Content-Type": "application/json",
