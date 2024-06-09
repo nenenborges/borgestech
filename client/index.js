@@ -1,4 +1,3 @@
-/*fetch(request, {mode: 'cors'});*/
 const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
   locale: 'pt-BR', // 'pt-BR'
 });
