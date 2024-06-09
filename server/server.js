@@ -36,8 +36,8 @@ app.post("/create_preference", async (req, res) => {
 		  },
 		],
 		back_urls:{
-		  success:"http://127.0.0.1:5500/sucess.html",
-		  failure:"http://127.0.0.1:5500/cancel.html",
+		  success:"https://borgestech.com.br/sucess.html",
+		  failure:"https://borgestech.com.br/cancel.html",
 		  pending:""
 
 		},
