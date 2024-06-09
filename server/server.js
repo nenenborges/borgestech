@@ -24,7 +24,7 @@ app.get("/success", (req, res) => {
 });*/
 
 
-app.post("/create_preference", async (req, res) => {
+app.post("http://localhost:8080/create_preference", async (req, res) => {
 	try{
 	  const body = {
 		items: [
@@ -116,10 +116,10 @@ fetch("https://api.mercadopago.com/v1/payments?accessToken:TEST-3212641412207539
 			
 
 //---------FIM DO RECEBENDO MERCADO PAGO--------//
-/*
+
   app.listen(port, ()=> {
-	console.log(`Este servidor esta na porta  ${port}` );
+	//console.log(`Este servidor esta na porta  ${port}` );
 	
   });
 
- */
+ 
