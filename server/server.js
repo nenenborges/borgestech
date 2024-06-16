@@ -1,4 +1,4 @@
-/*
+
 import express from "express";
 import cors from "cors";
 
@@ -24,7 +24,7 @@ app.get("/success", (req, res) => {
 	console.log("pagamento feito")
 });*/
 
-/*
+
 app.post("http://localhost:8080/create_preference", async (req, res) => {
 	try{
 	  const body = {
