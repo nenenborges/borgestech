@@ -1,4 +1,4 @@
-
+/*
 import express from "express";
 import cors from "cors";
 
@@ -18,11 +18,7 @@ app.use(express.json());
 app.get("/",  (req, res) => {
 	res.send("eu sou um server)");
 });
-/*
-app.get("/success", (req, res) => {
-	res.send("pagamento feito")
-	console.log("pagamento feito")
-});*/
+
 
 
 app.post("/create_preference", async (req, res) => {
@@ -44,11 +40,8 @@ app.post("/create_preference", async (req, res) => {
 		},
 		
 		auto_return:"approved",
-		//notification_url: "http://127.0.0.1:5500/index.html/webhook"
 		
 	  }
-
-  
 	  const preference = new Preference(client);
 	  const result = await preference.create({ body });
 	  res.json({
@@ -63,106 +56,53 @@ app.post("/create_preference", async (req, res) => {
 	}
 });
 
-//-----RECEBENDO PAGO DO MERCADO PAGO--------//
-
-app.post("/webhook", async function(req, res){
-	const payment = req.query
-	//console.log("resultado",{payment});
-/*
-	const paymentId = req.query.id;
-	
-	try{
-		const response = await fetch(`https://api.mercadopago.com/v1/payments/${paymentId}`, {
-			method: "GET",
-			headers: {
-				"Authorization": `Bearer ${"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"}`
-			}
-		});
-
-		if(response.ok){
-			const data = await response.json();
-			//console.log(data);
-			console.log(data);
-			
-		}
-		res.sendStatus(200);
-	}catch (error) {
-		console.error("Erro;", error);
-		res.sendStatus(500);
-	}*/
-})
-/*
-app.post("/post-payment",(req, res) => {
-	data = req.body
-	alert(data)
-})
-
-fetch("https://api.mercadopago.com/v1/payments?accessToken:TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826", {
-			method: "GET",
-			headers: {
-				"X-meli-session-id": data.deviceId
-			}
-			})
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				console.log(data.status);
-				if( data.status == "approved"){
-					//res.sendFile("")
-					console.log("aprovou");
-				}
-			});*/
-
-			
-
-//---------FIM DO RECEBENDO MERCADO PAGO--------//
-/*
   app.listen(port, ()=> {
 	//console.log(`Este servidor esta na porta  ${port}` );
 	
   });
-
  */
-
 //---------teste mercado pago -----------===
-//import { MercadoPagoConfig } from "mercadopago";
-//import { MercadoPagoConfig, Preference } from "mercadopago";
-//const client = new MercadoPagoConfig({ accessToken: "TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826" });
 
-//const mp = new MercadoPago('YOUR_PUBLIC_KEY');
-//const bricksBuilder = mp.bricks();
-/*const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
-  locale: "pt-BR"// 'pt-BR'
-});*/
-//console.log("teste", preference.id);
 
-//document.getElementById("checkout-btn").addEventListener("click", () => {
-	alert("teste");
-/*
-const preference = new Preference(client);
-console.log("teste", preference.id);
+import { MercadoPagoConfig, Preference } from "mercadopago";
 
-preference.create({
-    body: {
-      items: [
-        {
-          title: "produtos",
-          quantity: 1,
-          unit_price: 25
-        }
-      ],
-    }
-    
-  })
+const client = new MercadoPagoConfig({accessToken:"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"});
 
-*/
+document.getElementById("checkout-btn").addEventListener("click", async () => {
+const preference = await new Preference(client)
+.create({
+  body: {
+    items: [
+      {
+	id: "01",
+        title: 'produto',
+        quantity: 1,
+        unit_price: 25
+      }
+    ],
+  }
+});
+redirect(preference.sandbox_init_point);
 
-//});
-/*
-createCheckoutButton(preference.id); 
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+//createCheckoutButton(preference.id); 
 
 //----------------buton-----------------///
+/*
 const createCheckoutButton = (preferenceId) => {
   const bricksBuilder = mp.bricks();
 
@@ -180,6 +120,5 @@ const createCheckoutButton = (preferenceId) => {
 };
 
 */
-
 
  //-----------------------///
