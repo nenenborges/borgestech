@@ -55,7 +55,7 @@ const createCheckoutButton = (preferenceId) => {
 */
 
 //---------teste mercado pago -----------===
-import { MercadoPagoConfig } from 'mercadopago';
+import { MercadoPagoConfig } from "mercadopago";
 const client = new MercadoPagoConfig({ accessToken: "TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826" });
 
 //const mp = new MercadoPago('YOUR_PUBLIC_KEY');
