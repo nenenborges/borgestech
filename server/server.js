@@ -125,7 +125,6 @@ fetch("https://api.mercadopago.com/v1/payments?accessToken:TEST-3212641412207539
 
  */
 
-
 //---------teste mercado pago -----------===
 import { MercadoPagoConfig } from "mercadopago";
 //import { MercadoPagoConfig, Preference } from "mercadopago";
@@ -139,28 +138,27 @@ const mp = new MercadoPago('TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b', {
 
 
 document.getElementById("checkout-btn").addEventListener("click", () => {
-	alert("teste")
+	//alert("teste")
 
 const preference = new Preference(client);
 console.log("teste", preference.id)
 
 preference.create({
-  body: {
-    items: [
-      {
-        title: "produtos",
-        quantity: 1,
-        unit_price: 25
-      }
-    ],
-  }
-	console.log("teste", preference.id)
-});
-//.then(console.log)
-//.catch(console.log);
+    body: {
+      items: [
+        {
+          title: "produtos",
+          quantity: 1,
+          unit_price: 25
+        }
+      ],
+    }
+    
+  })
 
 
 
+})
 
 createCheckoutButton(preference.id); 
 
@@ -180,5 +178,8 @@ const createCheckoutButton = (preferenceId) => {
 
   renderComponent();
 };
+
+
+
 
  //-----------------------///
