@@ -159,7 +159,7 @@ preference.create({
 */
 
 //});
-
+/*
 createCheckoutButton(preference.id); 
 
 //----------------buton-----------------///
@@ -179,7 +179,7 @@ const createCheckoutButton = (preferenceId) => {
   renderComponent();
 };
 
-
+*/
 
 
  //-----------------------///
