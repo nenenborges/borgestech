@@ -133,7 +133,7 @@ fetch("https://api.mercadopago.com/v1/payments?accessToken:TEST-3212641412207539
 //const mp = new MercadoPago('YOUR_PUBLIC_KEY');
 //const bricksBuilder = mp.bricks();
 const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
-  locale: "pt-BR", // 'pt-BR'
+  locale: "pt-BR"// 'pt-BR'
 });
 
 
