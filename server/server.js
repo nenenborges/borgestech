@@ -127,17 +127,17 @@ fetch("https://api.mercadopago.com/v1/payments?accessToken:TEST-3212641412207539
 
 //---------teste mercado pago -----------===
 //import { MercadoPagoConfig } from "mercadopago";
-//import { MercadoPagoConfig, Preference } from "mercadopago";
+import { MercadoPagoConfig, Preference } from "mercadopago";
 //const client = new MercadoPagoConfig({ accessToken: "TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826" });
 
 //const mp = new MercadoPago('YOUR_PUBLIC_KEY');
 //const bricksBuilder = mp.bricks();
-const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
+const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b");/*, {
   locale: "pt-BR"// 'pt-BR'
-});
+});*/
+console.log("teste", preference.id);
 
-
-document.getElementById("checkout-btn").addEventListener("click", () => {
+//document.getElementById("checkout-btn").addEventListener("click", () => {
 	alert("teste");
 /*
 const preference = new Preference(client);
@@ -158,7 +158,7 @@ preference.create({
 
 */
 
-});
+//});
 
 createCheckoutButton(preference.id); 
 
