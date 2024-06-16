@@ -62,10 +62,10 @@ import { loadMercadoPago } from "@mercadopago/sdk-js";
 
 
 await loadMercadoPago();
-const mp = new window.MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
-//const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
+const mp = new window.MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b");
+/* const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
   locale: 'pt-BR', // 'pt-BR'
-});
+}); */
 
 let preference = {
   items: [
