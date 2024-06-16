@@ -55,38 +55,41 @@ const createCheckoutButton = (preferenceId) => {
 */
 
 //---------teste mercado pago -----------===
-document.getElementById("checkout-btn").addEventListener("click", async () => {
-  
-//const mp = new MercadoPagoConfig({accessToken:"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"});
-import { loadMercadoPago } from "@mercadopago/sdk-js";
+import { MercadoPagoConfig } from 'mercadopago';
+const client = new MercadoPagoConfig({ accessToken: "TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826" });
 
-
-await loadMercadoPago();
-const mp = new window.MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b");
-/* const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
+//const mp = new MercadoPago('YOUR_PUBLIC_KEY');
+//const bricksBuilder = mp.bricks();
+const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
   locale: 'pt-BR', // 'pt-BR'
-}); */
-
-let preference = {
-  items: [
-    {
-      title: 'Meu produto',
-      unit_price: 100,
-      quantity: 1,
-    }
-  ],
-  purpose: 'wallet_purchase'
-};
-
-mercadopago.preferences.create(preference)
-.then(function(response){
-  global.id = response.body.id;
-}).catch(function(error){
-  console.log(error);
 });
 
-  });//buton
 
+document.getElementById("checkout-btn").addEventListener("click", async () => {
+
+const preference = new Preference(client);
+console.log("teste", preference.id)
+
+preference.create({
+  body: {
+    items: [
+      {
+        title: "produtos",
+        quantity: 1,
+        unit_price: 25
+      }
+    ],
+  }
+})
+.then(console.log)
+.catch(console.log);
+
+
+
+
+createCheckoutButton(preference.id); 
+
+//----------------buton-----------------///
 const createCheckoutButton = (preferenceId) => {
   const bricksBuilder = mp.bricks();
 
@@ -103,5 +106,4 @@ const createCheckoutButton = (preferenceId) => {
   renderComponent();
 };
 
-
-    //-----------------------///
+ //-----------------------///
