@@ -68,7 +68,7 @@ import { MercadoPagoConfig, Preference } from "mercadopago";
 
 const client = new MercadoPagoConfig({accessToken:"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"});
 
-document.getElementById("checkout-btn").addEventListener("click", async () => {
+//document.getElementById("checkout-btn").addEventListener("click", async () => {
 const preference = await new Preference(client)
 .create({
   body: {
@@ -85,7 +85,7 @@ const preference = await new Preference(client)
 redirect(preference.sandbox_init_point);
 
 
-});
+//});
 
 
 
