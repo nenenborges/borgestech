@@ -25,7 +25,7 @@ app.get("/success", (req, res) => {
 });*/
 
 
-app.post("http://localhost:8080/create_preference", async (req, res) => {
+app.post("/create_preference", async (req, res) => {
 	try{
 	  const body = {
 		items: [
