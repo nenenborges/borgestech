@@ -138,7 +138,7 @@ const mp = new MercadoPago('TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b', {
 });
 
 
-document.getElementById("checkout-btn").addEventListener("click", async () => {
+document.getElementById("checkout-btn").addEventListener("click", () => {
 	alert("teste")
 
 const preference = new Preference(client);
@@ -154,9 +154,10 @@ preference.create({
       }
     ],
   }
-})
-.then(console.log)
-.catch(console.log);
+	console.log("teste", preference.id)
+});
+//.then(console.log)
+//.catch(console.log);
 
 
 
