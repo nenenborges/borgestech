@@ -64,7 +64,7 @@ app.post("/create_preference", async (req, res) => {
 //---------teste mercado pago -----------===
 
 
-import { MercadoPagoConfig, Preference } from "mercadopago";
+import { MercadoPagoConfig } from "mercadopago";
 
 const client = new MercadoPagoConfig({accessToken:"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"});
 
