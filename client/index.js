@@ -2,7 +2,7 @@
 
 //const client = new MercadoPagoConfig({accessToken:"TEST-3212641412207539-060606-7cdd9e1aa6602db6c5536087d189cbcb-1810191826"});
 
-/*
+
 const mp = new MercadoPago("TEST-b2c96b64-a20b-4bdf-958a-a583fdbeb64b", {
   locale: 'pt-BR', // 'pt-BR'
 });
@@ -17,7 +17,7 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
           price: document.getElementsByClassName("total-price")[0].innerText,
       };
 
-      const response = await fetch("http://localhost:3000/create_preference", { 
+      const response = await fetch("/create_preference", { 
           method: "POST",
           headers: {
               "Content-Type": "application/json",
@@ -52,5 +52,5 @@ const createCheckoutButton = (preferenceId) => {
 
   renderComponent();
 };
-*/
+
 
