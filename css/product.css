@@ -137,7 +137,8 @@
     justify-content: space-between;
     padding-top: 5px;
     flex-wrap: wrap;
-    justify-content: center;  
+    margin: 8px;
+    /*justify-content: center;  */
 }
 
 .product-box{
