@@ -11,12 +11,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    
 }
 
 .slider{
     width: 100%;
-    height: 500px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -54,14 +54,57 @@ body{
 }
 
 
-#radio1:checked ~ .m-btn{
-    background-color: #23e3c2;
+/* ///// SLIDE MOBILE ////// */
+@media only screen and (max-width:799px){
+
+    .section{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .slider{
+        width: 95%;
+        height: 100px;
+        overflow: hidden;
+    
+    }
+
+.slide{
+    width: 500%;
+    height: 100px;
+    display: flex;
+    background-size: cover;
 }
 
-#radio2:checked ~ .m-btn{
-    background-color: #23e3c2;
+.slide input{
+    display: none;
+
 }
 
-#radio3:checked ~ .nav-m #radio2{
-    background-color: #23e3c2;
+.st{
+    width: 20%;
+    transition: 2s;
+}
+
+.st img{
+    width: 100%;
+    height: 100px;
+
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+    
 }
