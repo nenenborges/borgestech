@@ -44,6 +44,9 @@
         /*background: radial-gradient(#ffff,#c7bc5d);*/
         background:#e3e6f3;
     }
+    .img-banner{
+        width: 200px;
+    }
     .col-1{
         text-align: left;
         font-size: 10px;
