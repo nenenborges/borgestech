@@ -175,21 +175,54 @@
     
 </section>
 
-<section class="feature">
-    <!-----box1-->
+    <!--////////////SLIDER//////////////-->
+    <section class="section">
+        <div class="slider">
+            <div class="slide">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+              
+
+                <div class="st first">
+                    <img src="imagens/BANNER1.png" alt="">
+                </div>
+
+                <div class="st">
+                    <img src="imagens/BANNER2.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var counter=1;
+        setInterval(function(){
+            document.getElementById("radio" + counter).checked=true;
+            counter++;
+            if( counter > 2){
+                counter = 1;
+            }
+        },5000);
+    </script>
+
+    <!------------FIM DO SLIDER------------>
+
+<!--<section class="feature">
+    <!-----box1--
     <div class="fe-box">
         <img src="imagens/impressoras.jpg" alt="">
     </div>
 
-    <!-----box1-->
+    <!-----box1--
     <div class="fe-box">
         <img src="imagens/not.jpg" alt="">
     </div>
-    <!-----box1-->
+    <!-----box1--
     <div class="fe-box">
         <img src="imagens/banner3.png" alt="">
     </div>
-</section>
+</section> -->
 
 <section class="product">
     <h2 id="produtos" class="title">Produtos</h2>
