@@ -42,7 +42,8 @@
         padding-left: 10px; 
         padding-right: 10px;
         /*background: radial-gradient(#ffff,#c7bc5d);*/
-        background:#e3e6f3;
+        /*background:#e3e6f3;*/
+        background: linear-gradient(to right, #f8f8fa,#e3e6f3, #4121fa);
     }
     .img-banner{
         width: 200px;
