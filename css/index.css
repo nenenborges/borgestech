@@ -90,7 +90,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/imagens/Hero.png);
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/imagens/Hero1.png);
     background-size: cover;
 }
 
@@ -191,6 +191,7 @@ footer {
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
+
 
 
 
