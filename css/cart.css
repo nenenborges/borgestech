@@ -49,32 +49,148 @@
 @media (max-width: 480px) {
     .cart-sidebar { width: 100%; }
 }
-.cart-footer{
-    margin-bottom: 20px;
+/*------*/
+.cart-footer {
+    /* Cria a linha acima */
+    border-top: 1px solid var(--gold-dark); 
+    padding: 20px 0;
+    margin-top: 15px;
     
-
+    /* Layout Flexbox */
+    display: flex;
+    flex-direction: column; /* Empilha os itens para controle individual */
+    gap: 15px;
+    position: relative;
 }
 
-
-
-.btn-checkout{
-    background-color: var(--gold-light);
-    padding: 10px 20px;
-    border-radius: 8px;
+/* Estilização do Bloco do Total */
+.cart-footer .total {
+    align-self: flex-end; /* Joga apenas o total para a DIREITA */
+    font-size: 1.2rem;
     font-weight: bold;
-    
+    color: #888181;
 }
 
+/* Estilização do Botão Finalizar */
+.btn-checkout {
+    align-self: center; /* Posiciona o botão exatamente no CENTRO */
+    background-color: #25d366; /* Cor característica do WhatsApp */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    width: fit-content; /* Garante que o botão não estique */
+}
+
+.btn-checkout:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+}
+
+#cart-total {
+    color: #ece8e8;
+    margin-left: 5px;
+}
+/*-----------*/
 .cart-header {
-    padding: 20px;
+    padding: 8px;
     border-bottom: 1px solid var(--gold-dark);
     display: flex;
     justify-content: space-between;
+    align-items: center; 
+}
+.close-cart{
+    font-size: 35px;
+}
+.cart-items{
+flex: 1;
+overflow-y: auto;
+    
+}
+.cart-item {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: #2c2c2c; /* Fundo escuro do carrinho */
+    padding: 10px 10px;
+    color: white;
+    font-family: 'SF Pro Display', sans-serif; /* Fonte similar à imagem */
+    border-bottom: 1px solid #3d3d3d;
 }
 
-.cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
+/* Informações do item */
+.item-info h4 { 
+    margin: 0; 
+    font-weight: 400; 
+   /* text-transform: uppercase; */
+    width: 120px; 
+    font-size: 13px;}
+    
+.item-price p { 
+    margin: 0; 
+    font-size: 0.8rem; }
+
+/* ----------------------------------------------------------- */
+/* NOVO ESTILO: Seletor de Quantidade Unificado (Igual à imagem) */
+/* ----------------------------------------------------------- */
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Corpo do seletor */
+   /* background-color: #f1f3f4;  Cinza claro de fundo da imagem */
+    border: 1px solid var(--gold-dark); /* Borda externa sutil */
+    border-radius: 8px; /* Bordas arredondadas do container */
+    overflow: hidden; /* Garante que os botões sigam o arredondamento */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Sombra suave opcional */
+}
+
+/* Botões e Número (Compartilham estilos base) */
+.quantity-selector .qty-btn,
+.quantity-selector .qty-number {
+    color: var(--gold-light); /* Texto/Ícones pretos */
+    font-weight: bold; /* Negrito */
+    font-size: 1.1rem; /* Tamanho grande dos ícones/números */
+    text-align: center;
+    width: 25px; /* Largura igual para as três seções */
+    height: 25px; /* Altura do seletor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Botões (-) e (+) */
+.quantity-selector .qty-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem; /* Ícones um pouco maiores */
+    line-height: 0;
+    transition: background-color 0.2s;
+}
+
+.quantity-selector .qty-btn:hover {
+    background-color: rgba(0,0,0,0.05); /* Feedback visual no hover */
+}
+
+/* Divisórias Verticais Finas */
+/* Adiciona uma borda esquerda apenas no número e no botão (+) */
+.quantity-selector .qty-number,
+.quantity-selector .qty-btn:last-child {
+    border-left: 0.5px solid var(--gold-dark); /* Divisória fina cinza */
+}
+
+/* Ajuste específico para o número central */
+.quantity-selector .qty-number {
+    font-family: monospace; /* Para garantir que '01' fique alinhado */
+    font-size: 0.8rem;
+    color: white;
 }
