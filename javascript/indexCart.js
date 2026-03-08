@@ -59,16 +59,20 @@ function updateCart() {
 
         cartItemsElement.innerHTML += `
             <div class="cart-item">
-                <div>
-                    <h4>${item.name}</h4>
-                    <p>R$ ${item.price.toFixed(2)}</p>
-                </div>
-                <div>
-                    <button class="qty-btn" onclick="changeQuantity('${item.name}', -1)">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="qty-btn" onclick="changeQuantity('${item.name}', 1)">+</button>
-                </div>
-            </div>
+        <div class="item-info">
+            <h4>${item.name}</h4>
+        </div>
+        
+        <div class="item-price">
+            <p>R$ ${item.price.toFixed(2)}</p>
+        </div>
+
+        <div class="quantity-selector">
+            <button class="qty-btn" onclick="changeQuantity('${item.name}', -1)">−</button>
+            <span class="qty-number">${String(item.quantity).padStart(2, '0')}</span>
+            <button class="qty-btn" onclick="changeQuantity('${item.name}', 1)">+</button>
+        </div>
+    </div>
         `;
     });
 
@@ -116,4 +120,5 @@ function checkoutWhatsApp() {
 
     // Abre o WhatsApp em uma nova aba
     window.open(url, '_blank');
+
 }
