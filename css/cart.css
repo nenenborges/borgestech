@@ -127,7 +127,7 @@ overflow-y: auto;
     margin: 0; 
     font-weight: 400; 
    /* text-transform: uppercase; */
-    width: 120px; 
+    width: 170px; 
     font-size: 13px;}
     
 .item-price p { 
@@ -194,3 +194,4 @@ overflow-y: auto;
     font-size: 0.8rem;
     color: white;
 }
+
