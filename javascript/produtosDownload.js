@@ -32,7 +32,7 @@ async function carregarProdutos() {
                 <div class="product-card" >
                     <img src="${produto.imagem}" alt="${produto.nome}">
                     <h3>${produto.nome}</h3>
-                    <p>R$ ${produto.preco}</p>
+                    <p>R$ ${produto.preco.toFixed(2)}</p>
                     <button onclick="addToCart('${produto.nome}', ${produto.preco})"> Adicionar ao Carrinho </button> 
                </div>
             `;
@@ -47,3 +47,4 @@ async function carregarProdutos() {
 // Executa a função ao carregar a página
 
 carregarProdutos();
+
