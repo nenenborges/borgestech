@@ -327,3 +327,131 @@ footer {
         margin: 25px 0;
     }
 }
+
+<!---SERVIÇOS-->
+* Seção de Serviços */
+.services-section {
+    padding: 60px 5%;
+    text-align: center;
+    background-color: var(--black);
+}
+
+.services-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--gold-light);
+}
+
+.services-subtitle {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.8;
+    color: var(--gold-light);
+    line-height: 1.5;
+}
+
+/* Container dos Cards */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Estilo do Card individual */
+.service-card {
+    background: #0f0f0f;
+    border: 1px solid var(--gold-dark);
+    border-radius: 12px;
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 450px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--font-color);
+}
+
+/* Ícone superior */
+.service-icon {
+    background-color: rgba(126, 108, 70, 0.2);
+    border: 1px solid var(--gold-dark);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.service-icon i {
+    color: var(--font-color);
+    font-size: 1.4rem;
+}
+
+.service-card h3 {
+    color: #FFF;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Lista de benefícios */
+.service-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.service-card li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--gold-light);
+}
+
+.service-card li i {
+    color: #25D366; /* Tom verde para os marcadores de check */
+    font-size: 1rem;
+}
+
+/* Botões específicos dos Serviços */
+.btn-service {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: var(--gold-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid var(--gold-light);
+}
+
+.btn-service:hover {
+    background-color: var(--font-color);
+    color: #000;
+}
+
+/* Ajuste Responsivo para telas menores */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-card {
+        max-width: 100%;
+    }
+}
