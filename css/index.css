@@ -85,6 +85,10 @@ header {
     .nav-links { display: none; } /* Esconde menu padrão */
     .hamburger { display: block; cursor: pointer; order: -1; }
     .logo { flex-grow: 1; text-align: center; }
+    .hero h1{
+        width: 90%;
+       font-size: 20px;
+    }
 }
 
 
@@ -452,6 +456,6 @@ footer {
     }
     
     .service-card {
-        max-width: 100%;
+        max-width: 90%;
     }
 }
