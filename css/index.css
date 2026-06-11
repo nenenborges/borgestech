@@ -199,7 +199,7 @@ header {
     display: grid;
     gap: 6px; /* Espaço entre os cards */
     padding: 1px;
-    grid-template-columns: repeat(4, 1fr); /* 2 colunas por padrão */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão */
 }
 
 /* Ajuste para telas muito pequenas (opcional) */
@@ -212,7 +212,7 @@ header {
 /* Ajuste para Desktop (3 ou 4 colunas) */
 @media (min-width: 768px) {
     .grid-products {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
