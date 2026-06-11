@@ -199,7 +199,7 @@ header {
     display: grid;
     gap: 6px; /* Espaço entre os cards */
     padding: 1px;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão */
+    grid-template-columns: repeat(4, 1fr); /* 2 colunas por padrão */
 }
 
 /* Ajuste para telas muito pequenas (opcional) */
