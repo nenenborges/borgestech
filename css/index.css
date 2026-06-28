@@ -184,7 +184,8 @@ header {
 /* Ajuste para telas muito pequenas (opcional) */
 @media (max-width: 350px) {
     .grid-products {
-        grid-template-columns: 1fr; /* Volta para 1 col se a tela for minúscula */
+       /* grid-template-columns: 1fr; /* Volta para 1 col se a tela for minúscula */
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão */
     }
 }
 
