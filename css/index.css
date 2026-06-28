@@ -147,6 +147,7 @@ header {
     text-align: center;
     background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.10)), url(/imagens/Impressora.png);
     background-size: cover;
+
 }
 
 .btn-primary {
@@ -163,76 +164,148 @@ header {
 
 /* Catálogo */
 .products {
-    padding: 50px 5%;
+    padding: 20px 3%;
 }
 
 .products h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: var(--gold-light);
 }
 
 
+/* ##############################################
+    Configuração do Grid de Produtos 
+###############################################*/
+
 /* Configuração do Grid de Produtos */
 .grid-products {
     display: grid;
-    gap: 6px; /* Espaço entre os cards */
-    padding: 1px;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão */
+    gap: 12px; /* Aumentado levemente para respirar melhor no mobile */
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr); 
 }
 
-/* Ajuste para telas muito pequenas (opcional) */
 @media (max-width: 350px) {
     .grid-products {
-       /* grid-template-columns: 1fr; /* Volta para 1 col se a tela for minúscula */
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão */
+         display: grid;
+       /* grid-template-columns: 1fr; */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 6px; /* Aumentado levemente para respirar melhor no mobile */
+
+    }
+
+   .grid-products button{
+    font-size: 10px;
+    font-weight: 300;
+   }
+
+}
+
+/* Ajuste intermediário para Tablets (opcional, melhora a transição) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .grid-products {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Ajuste para Desktop (3 ou 4 colunas) */
+/* Ajuste para Desktop (5 colunas) */
 @media (min-width: 768px) {
     .grid-products {
         grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        padding: 20px;
     }
 }
 
-/* Estilo do Card para caber 2 por linha */
+/* ################################################# */
+
+/* Estilo do Card */
 .product-card {
     background: #0f0f0f;
-    border: 0.5px solid var(--font-color);
+    border: 0.5px solid var(--font-color, #ccc);
     border-radius: 8px;
-    padding: 4px;
-    text-align: center;
+    padding: 8px; /* Aumentado para melhor espaçamento interno */
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito ao passar o mouse (apenas desktop) */
+@media (min-width: 768px) {
+    .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Container da Imagem para evitar tamanhos desproporcionais */
+.product-card .img-container {
+    width: 100%;
+    height: 150px; /* Altura fixa para manter o padrão visual */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    overflow: hidden;
 }
 
 .product-card img {
     max-width: 100%;
-    height: auto;
-    margin-bottom: 3px;
+    max-height: 100%;
+    object-fit: contain; /* Garante que a foto do produto apareça inteira sem esticar */
     border-radius: 5px;
 }
 
 .product-card h3 {
-    font-size: 0.9rem; /* Diminuir um pouco o texto para não quebrar o layout */
+    font-size: 0.7rem;
     margin: 5px 0;
+    color: #fff;
+    /* Limita o título a duas linhas caso seja muito grande (evita quebrar o layout) */
+    display: -webkit-box;
+   /* -webkit-line-clamp: 2;*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.4rem; 
 }
+
+.product-card .price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 4px 0;
+}
+
 .product-card button {
-    background: var(--font-color);
+    background: var(--font-color, #fff);
     border: none;
-    padding: 8px 9px;
-    margin-top: 15px;
+    padding: 8px 12px;
+    margin-top: auto; /* Puxa o botão SEMPRE para o final do card, alinhando todos */
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
+    transition: opacity 0.2s;
+    width: 100%;
 }
+
+.product-card button:hover {
+    opacity: 0.9;
+}
+
+.aviso-vazio {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px;
+    color: #888;
+}
+/*#################################*/
 
 /* Footer */
 footer {
     border-top: 1px solid var(--gold-dark);
-    padding: 40px 5% 20px;
+    padding: 20px 3% 30px;
     background-color: #0a0a0a;
 }
 
@@ -244,7 +317,7 @@ footer {
 }
 
 .social-icons i, .footer-cards i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 10px;
     color: var(--font-color);
 }
@@ -466,6 +539,8 @@ footer {
         padding: 60px 20px;
     }
 
+    
+
     .services-container {
         flex-direction: column;
         align-items: center;
@@ -484,5 +559,7 @@ footer {
     .service-card h3 {
         font-size: 1.3rem;
     }
+
+
 }
 /*###############################*/
