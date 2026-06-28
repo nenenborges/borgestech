@@ -27,7 +27,6 @@ header {
     z-index: 1000;
 }
 
-
 /* Layout da Navbar */
 .navbar {
     display: flex;
@@ -139,9 +138,6 @@ header {
 }
 
 /* Hero Section */
-/* ###########################################
-                 IMAGEM DO BANNER 
-##############################################*/
 .hero {
     height: 60vh;
     display: flex;
@@ -149,7 +145,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/imagens/Impressora.png);
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.10)), url(/imagens/Impressora.png);
     background-size: cover;
 }
 
@@ -165,9 +161,7 @@ header {
     
 }
 
-/* ###############################
-           CATALAGO
-##################################*/
+/* Catálogo */
 .products {
     padding: 50px 5%;
 }
@@ -177,6 +171,7 @@ header {
     margin-bottom: 40px;
     color: var(--gold-light);
 }
+
 
 /* Configuração do Grid de Produtos */
 .grid-products {
@@ -490,5 +485,3 @@ footer {
     }
 }
 /*###############################*/
-
-
