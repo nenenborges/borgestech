@@ -137,31 +137,77 @@ header {
     background-color: var(--font-color);
 }
 
-/* Hero Section */
+/* ####################################
+        HERO PARTE DO BANNER 
+    ####################################*/
+    
 .hero {
     height: 60vh;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.10)), url(/imagens/Impressora.png);
-    background-size: cover;
-
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+    color: #fff;
+    padding: 2rem 1.5rem; /* Mais espaço nas laterais em telas pequenas */
 }
 
+.hero-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+}
+
+/* Ajuste principal do parágrafo */
+.hero-conteudo p {
+    font-size: 1.1rem; /* Tamanho ideal para celular */
+    line-height: 1.6; /* Aumenta o espaço ENTRE as linhas */
+    margin: 1.2rem auto 1.8rem auto; /* Espaço ACIMA e ABAIXO do texto */
+    max-width: 700px; /* Não deixa o texto ficar muito largo */
+}
+
+/* Ajuste do botão */
 .btn-primary {
-    margin-top: 20px;
-    padding: 12px 30px;
+    margin-top: 0; /* Remove margem duplicada */
+    padding: 14px 32px; /* Botão maior e mais fácil de tocar no celular */
     background-color: var(--gold-green);
     color: white;
     text-decoration: none;
     border-radius: 30px;
     transition: 0.3s;
     border: 0.5px solid var(--gold-light);
-    
+    font-size: 1rem; /* Tamanho da fonte do botão */
+    display: inline-block; /* Garante que as margens funcionem */
 }
 
+/* Ajustes extras para telas MUITO pequenas (abaixo de 480px) */
+@media (max-width: 480px) {
+    .hero-conteudo h1 {
+        font-size: 1.5rem; /* Reduz um pouco o título */
+    }
+    .hero-conteudo p {
+        font-size: 1rem;
+        line-height: 1.7; /* Mais respiro ainda em telas menores */
+        margin: 1rem auto 1.5rem auto;
+    }
+    .btn-primary {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+.hero-imagem-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 /* Catálogo */
 .products {
     padding: 20px 3%;
