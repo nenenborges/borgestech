@@ -1,9 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-// Suas configurações do Firebase
 const firebaseConfig = {
-     apiKey: "AIzaSyCaPv_OzBN9vI20I0ynTaIZRsViD9fa3WE",
+    apiKey: "AIzaSyCaPv_OzBN9vI20I0ynTaIZRsViD9fa3WE",
     authDomain: "borgestechlogin.firebaseapp.com",
     projectId: "borgestechlogin",
     storageBucket: "borgestechlogin.appspot.com",
@@ -11,40 +10,49 @@ const firebaseConfig = {
     appId: "1:769990569355:web:48e3efddc44248fa30538e"
 };
 
-// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const container = document.getElementById('container-produtos');
 
 async function carregarProdutos() {
     try {
-        // Busca a coleção "produtos" no Firestore
         const querySnapshot = await getDocs(collection(db, "produtos"));
-        
-        // Limpa o container antes de carregar (opcional)
         container.innerHTML = '';
 
         querySnapshot.forEach((doc) => {
             const produto = doc.data();
             
-            // Cria a estrutura do card dinamicamente
+            // Trata imagem vazia ou inválida
+            const imagemUrl = produto.imagem || '/imagens/padrao-produto.jpg';
+            // Texto alt otimizado para SEO
+            const altTexto = `${produto.nome} - Suprimento/peça para impressora Epson - Atendemos Água Branca e São Pedro do Piauí`;
+            // Escapa apostrofos para não quebrar o onclick
+            const nomeSeguro = produto.nome.replace(/'/g, "\\'");
+            // Formata preço no padrão brasileiro
+            const precoFormatado = produto.preco.toFixed(2).replace('.', ',');
+
             const card = `
-                <div class="product-card" >
-                    <img src="${produto.imagem}" alt="${produto.nome}">
+                <div class="product-card">
+                    <img 
+                        src="${imagemUrl}" 
+                        alt="${altTexto}"
+                        loading="lazy"
+                        onerror="this.src='/imagens/padrao-produto.jpg'; this.alt='Imagem indisponível'"
+                        width="260"
+                        height="260"
+                    >
                     <h3>${produto.nome}</h3>
-                    <p>R$ ${produto.preco.toFixed(2)}</p>
-                    <button onclick="addToCart('${produto.nome}', ${produto.preco})"> Adicionar ao Carrinho </button> 
-               </div>
+                    <p>R$ ${precoFormatado}</p>
+                    <button onclick="addToCart('${nomeSeguro}', ${produto.preco})">Adicionar ao Carrinho</button>
+                </div>
             `;
             
             container.innerHTML += card;
         });
     } catch (erro) {
         console.error("Erro ao buscar produtos: ", erro);
+        container.innerHTML = `<p style="text-align:center; color:#666;">Não foi possível carregar os produtos no momento.</p>`;
     }
 }
 
-// Executa a função ao carregar a página
-
 carregarProdutos();
-
