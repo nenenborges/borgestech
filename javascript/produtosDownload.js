@@ -24,13 +24,26 @@ async function carregarProdutos() {
             
             // Trata imagem vazia ou inválida
             const imagemUrl = produto.imagem || '/imagens/padrao-produto.jpg';
+            
             // Texto alt otimizado para SEO
             const altTexto = `${produto.nome} - Suprimento/peça para impressora Epson - Atendemos Água Branca e São Pedro do Piauí`;
-            // Escapa apostrofos para não quebrar o onclick
+            
+            // Escapa apostrófos para não quebrar o onclick
             const nomeSeguro = produto.nome.replace(/'/g, "\\'");
-            // Formata preço no padrão brasileiro
-            const precoFormatado = produto.preco.toFixed(2).replace('.', ',');
+            
+            // --- CORREÇÃO AQUI: Formata o preço com milhar e centavos usando o padrão nativo BR ---
+            // Transforma 2299.00 em "2.299,00"
+            const precoFormatado = new Intl.NumberFormat('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(produto.preco);
 
+            // Dividimos a string do preço pela vírgula para isolar os centavos
+            const partes = precoFormatado.split(',');
+            const reais = partes[0];
+            const centavos = partes[1] || '00';
+
+            // Montamos o card com o <span> nos centavos para conversar com o seu CSS
             const card = `
                 <div class="product-card">
                     <img 
@@ -42,11 +55,14 @@ async function carregarProdutos() {
                         height="260"
                     >
                     <h3>${produto.nome}</h3>
-                    <p>R$ ${precoFormatado}</p>
+                    
+                    <p>R$ ${reais}<span>,${centavos}</span></p>
+                    
                     <button onclick="addToCart('${nomeSeguro}', ${produto.preco})">Adicionar ao Carrinho</button>
                 </div>
             `;
-            
+
+            // Adiciona o card gerado na tela
             container.innerHTML += card;
         });
     } catch (erro) {
