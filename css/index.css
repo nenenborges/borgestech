@@ -3,7 +3,7 @@
      --gold-light: rgb(255, 235, 174);
     --gold-dark: rgb(126, 108, 70);
     --gold-green: rgba(21, 17, 5, 0.856);
-    --font-color: rgb(234, 164, 76);
+    --font-color: rgb(255, 235, 174);
 }
 
 * {
@@ -84,9 +84,7 @@ header {
     }
 }
 
-
 /*---------------*/
-
 .logo {
     display: flex;
     align-items: center;
@@ -102,8 +100,6 @@ header {
     font-weight: bold;
     color: #FFF; /* Branco para destacar o nome da logo conforme a imagem */
 }
-
-
 
 .nav-links {
     display: flex;
@@ -140,7 +136,6 @@ header {
 /* ####################################
         HERO PARTE DO BANNER 
     ####################################*/
-    
 .hero {
     height: 60vh;
     min-height: 400px;
@@ -198,7 +193,6 @@ header {
         font-size: 0.95rem;
     }
 }
-
 .hero-imagem-bg {
     position: absolute;
     top: 0;
@@ -212,143 +206,175 @@ header {
 .products {
     padding: 20px 3%;
 }
-
 .products h2 {
     text-align: center;
     margin-bottom: 30px;
     color: var(--gold-light);
 }
-
-
 /* ##############################################
     Configuração do Grid de Produtos 
 ###############################################*/
 
-/* Configuração do Grid de Produtos */
+/* Container que segura a grade de produtos */
 .grid-products {
     display: grid;
-    gap: 12px; /* Aumentado levemente para respirar melhor no mobile */
-    padding: 10px;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    background-color: #0d0d0e; /* Fundo levemente acinzentado idêntico ao redor do card na imagem */
 }
 
-@media (max-width: 350px) {
-    .grid-products {
-         display: grid;
-       /* grid-template-columns: 1fr; */
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 6px; /* Aumentado levemente para respirar melhor no mobile */
-
-    }
-
-   .grid-products button{
-    font-size: 10px;
-    font-weight: 300;
-   }
-
-}
-
-/* Ajuste intermediário para Tablets (opcional, melhora a transição) */
-@media (min-width: 480px) and (max-width: 767px) {
-    .grid-products {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Ajuste para Desktop (5 colunas) */
-@media (min-width: 768px) {
-    .grid-products {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        padding: 20px;
-    }
-}
-
-/* ################################################# */
-
-/* Estilo do Card */
+/* O Card do Produto baseado na imagem produto.png */
 .product-card {
-    background: #0f0f0f;
-    border: 0.5px solid var(--font-color, #ccc);
-    border-radius: 8px;
-    padding: 8px; /* Aumentado para melhor espaçamento interno */
-    text-align: left;
+    background-color: #ffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    max-width: 280px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa de e-commerce */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito ao passar o mouse (apenas desktop) */
-@media (min-width: 768px) {
+/* Este efeito SÓ vai funcionar em Computadores/Notebooks */
+@media (hover: hover) {
     .product-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+    .product-card button:hover {
+        background-color: #159443; /* Verde mais escuro no mouse */
     }
 }
 
-/* Container da Imagem para evitar tamanhos desproporcionais */
-.product-card .img-container {
-    width: 100%;
-    height: 150px; /* Altura fixa para manter o padrão visual */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-    overflow: hidden;
-}
-
+/* Área da Imagem */
 .product-card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Garante que a foto do produto apareça inteira sem esticar */
-    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    align-self: center;
 }
 
+/* Título do Produto */
 .product-card h3 {
-    font-size: 0.7rem;
-    margin: 5px 0;
-    color: #fff;
-    /* Limita o título a duas linhas caso seja muito grande (evita quebrar o layout) */
+    font-size: 15px;
+    color: #4a5b70; /* Tom azul/cinza escuro da imagem */
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+    /* Limita o texto em até 3 linhas para não quebrar o layout caso o nome seja gigante */
     display: -webkit-box;
-   /* -webkit-line-clamp: 2;*/
+ /*   -webkit-line-clamp: 3;*/
     -webkit-box-orient: vertical;
     overflow: hidden;
-    height: 2.4rem; 
 }
 
-.product-card .price {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    margin: 4px 0;
+/* Preço do Produto */
+.product-card p {
+    font-size: 28px; /* Valor principal bem grande */
+    font-weight: 700;
+    color: #0c1258;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: baseline;
 }
 
+/* Estilo para os centavos ficarem menores e alinhados ao topo */
+.product-card p span {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 2px;
+    position: relative;
+    top: -8px; /* Joga os centavos levemente para cima igual na foto */
+}
+
+/* Botão Adicionar ao Carrinho */
 .product-card button {
-    background: var(--font-color, #fff);
+    background-color: #1cb254; /* Verde vivo da imagem */
+    color: #ffffff;
     border: none;
-    padding: 8px 12px;
-    margin-top: auto; /* Puxa o botão SEMPRE para o final do card, alinhando todos */
+    border-radius: 10px; /* Formato pílula arredondado */
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: opacity 0.2s;
     width: 100%;
+    margin-top: auto; /* Garante que o botão fique sempre alinhado na parte inferior */
+    transition: background-color 0.2s ease;
 }
 
+/* Efeito de clique/passar o mouse no botão */
 .product-card button:hover {
-    opacity: 0.9;
+    background-color: #159443; /* Verde um pouco mais escuro ao interagir */
 }
 
-.aviso-vazio {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 30px;
-    color: #888;
-}
-/*#################################*/
+/* ==========================================================================
+   RESPONSIVIDADE PARA CELULARES (Telas de até 480px de largura)
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+    
+    /* Ajusta o container para que os cards fiquem centralizados e confortáveis no celular */
+    .grid-products {
+        grid-template-columns: repeat(2, 1fr); /* Força exibir apenas 1 produto por linha */
+        gap: 3px;                  /* Reduz o espaço entre os cards para aproveitar a tela */
+        padding: 2px;              /* Diminui as margens laterais do site */
+    }
 
-/* Footer */
+    /* Otimiza o tamanho do card para telas menores */
+    .product-card {
+        max-width: 100%;            /* Faz o card ocupar a largura total disponível na tela do celular */
+        width: 100%;
+        padding: 5px;              /* Compacta o preenchimento interno */
+        border-radius: 8px;         /* Bordas ligeiramente menores para combinar com a tela */
+    }
+
+    /* Reduz um pouco o tamanho da imagem para não empurrar o conteúdo muito para baixo */
+    .product-card img {
+        max-height: 160px;
+        margin-bottom: 5px;
+    }
+
+    /* Ajusta os textos para uma leitura mais confortável no celular */
+    .product-card h3 {
+        font-size: 12px;            /* Título ligeiramente menor */
+        margin-bottom: 8px;
+       /* -webkit-line-clamp: 2;      /* Limita a duas linhas no celular para poupar espaço vertical */
+    }
+
+    /* Ajusta o tamanho do preço principal */
+    .product-card p {
+        font-size: 22px;            /* Preço um pouco menor para evitar quebras de linha estranhas */
+        margin-bottom: 14px;
+    }
+
+    /* Ajusta a posição dos centavos no celular */
+    .product-card p span {
+        font-size: 12px;
+        top: -6px;
+    }
+
+    /* Deixa o botão mais fácil de ser tocado com o dedo (área de toque maior) */
+    .product-card button {
+        padding: 5px 20px;         /* Botão ligeiramente mais alto para facilitar o clique */
+        font-size: 12px;            /* Letra um pouco maior para melhor leitura */
+    }
+}
+
+/* Opcional: Para celulares um pouco maiores ou tablets em modo pé (de 481px até 768px) */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .grid-products {
+        grid-template-columns: repeat(2, 1fr); /* Exibe 2 produtos por linha */
+        gap: 15px;
+        padding: 15px;
+    }
+}
+/* #############################################
+                 FOOTER
+################################################*/
 footer {
     border-top: 1px solid var(--gold-dark);
     padding: 20px 3% 30px;
@@ -388,7 +414,7 @@ footer {
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background-color: var(--font-color); /* Cor das barras */
+    background-color: #FFFFCC; /* Cor das barras */
 }
 
 /* Responsividade Mobile (Máximo 768px) */
@@ -511,12 +537,12 @@ footer {
 }
 
 .service-card:hover .service-icon {
-    background: var(--gold-light, #d4af37);
+    background: var(--gold-light, #FFFFCC);
     transform: scale(1.05);
 }
 
 .service-icon i {
-    color: var(--gold-light, #d4af37);
+    color: var(--gold-light, #FFFFCC);
     font-size: 1.4rem;
     transition: all 0.3s ease;
 }
@@ -584,9 +610,6 @@ footer {
     .services-section {
         padding: 60px 20px;
     }
-
-    
-
     .services-container {
         flex-direction: column;
         align-items: center;
